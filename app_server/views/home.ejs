@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div id="header">
+        <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #eef1f8;">
+            <a class="navbar-brand " href="#"> Yourlogo </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav" style="background-color: #eef1f8;">
+                <ul class="navbar-nav">
+                    <li class="nav-item ">
+                        <a class="nav-link " href="#">Home </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="#">Edit your profile </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/logout">logout</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+    <div id="main">
+        <ul>
+            <li class="nav-item"><a href="#" id="chat"><button class="main_but text-light">chat</button></a></li>
+            <li class="nav-item"><a href="#" id="search"><button class="main_but text-light">search user</button></a></li>
+        </ul>
+        <div class="chat_container">
+            s
+        </div>
+        <div class="search_container">
+            <input type="text" autocomplete="off" placeholder="Seacrh..." onkeydown="Search()" id="search_in">
+            <div class="search_res"></div>
+        </div>
+    </div>
+
+    <script>
+        $('#search').on('click', function () {
+            $('.search_container').show();
+            $('.chat_container').hide();
+        })
+        $('#chat').on('click', function () {
+            $('.search_container').hide();
+            $('.chat_container').show();
+        });
+
+
+        function Search() {
+            setTimeout(function () {
+                $('.search_res').html('')
+                var inp_val = $('#search_in').val();
+                $.ajax({
+                    url: "/search",
+                    method: 'POST',
+                    data: {
+                        val: inp_val
+                    },
+                    success: function (result) {
+                        result.forEach(function (item, key) {
+                            var a = document.createElement('a')
+                            a.href = '/chat?id='+ item['id']
+                            var div = document.createElement('div');
+                            div.className = 'search_div';
+                            div.innerHTML = item['email'];
+                            a.append(div)
+                            $('.search_res').append(a)
+                        });
+                    }
+                });
+            }, 100);
+        }
+    </script>

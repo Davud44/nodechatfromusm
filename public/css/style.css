@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.01rem;
+}
+
+.inp {
+    width: 90%;
+    margin: 10px;
+    height: 40px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.inp_sub{
+    width: 130px;
+    height: 40px;
+    margin-bottom: 10px;
+    background-color: #00a9f8;
+    border: none;
+    border-radius: 5px;
+}
+nav{
+    box-shadow:  0 0 5px 1px gray;
+}
+#header {
+    width: 100%;
+    height: 50px;
+    background-color: aqua;
+    margin-bottom: 5px;
+}
+.main_but{
+    width: 100px;
+    height: 35px;
+    background-color: #fc5c68;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+}
+#footer {
+    width: 100%;
+    height: 50px;
+    background-color: orchid;
+}
+
+#login_form {
+    width: 40%;
+    box-shadow: 0 0 5px 1px grey;
+    text-align: center;
+    margin: 50px auto;
+    border-radius: 5px;
+    padding-bottom: 20px;
+}
+
+#main {
+    text-align: center;
+    width: 100%;
+    padding: 10px 20%;
+}
+
+#main ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.chat_container {
+    text-align: left;
+    height: 50px;
+    background-color: red;
+    margin: auto;
+}
+
+.search_container {
+    text-align: center;
+    padding: 5px 1%;
+    height: 50px;
+    margin: auto;
+    display: none;
+}
+
+.search_container input {
+    width: 95%;
+    height: 40px;
+    border: none;
+    outline: none;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding-left: 10px;
+    background-image: url('../images/lupa.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.search_div {
+    width: 99.5%;
+    border-radius: 1px;
+    margin: auto;
+    height: 40px;
+    box-shadow: 0 0 1px 1px grey;
+    margin-top: 5px;
+    padding-top: 5px;
+}
+
+a {
+    text-decoration: none ;
+    color: black !important;
+}
+.search_res a:hover{
+    text-decoration: none ;
+    color: black;
+}
+.search_div:hover {
+    background-color: gainsboro;
+}
+.search_res {
+    width: 95%;
+    margin: auto;
+    text-align: left;
+}
+
+@media only screen and (max-width: 768px) {
+    #login_form {
+        width: 90%;
+    }
+
+    #main {
+        padding: 10px 1px;
+    }
+}

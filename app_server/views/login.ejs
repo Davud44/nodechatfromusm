@@ -1,0 +1,13 @@
+<%- include('header') -%> 
+
+<form action="login_check" id="login_form" method='post'>
+    
+    <h1>Login page</h1>
+    <% if(typeof message !== 'undefined') { %>
+        <span class="text-danger " ><%= message  %></span>
+    <% } %>  
+    <input type="email" name="email" placeholder="email" class="inp" autocomplete="off"><br>
+    <input type="password" name="password" placeholder="password" class="inp" autocomplete="off"><br>
+    <input type="submit" value="Sign in" class="inp_sub"><br>
+</form>
+

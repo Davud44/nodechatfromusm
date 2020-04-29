@@ -1,0 +1,12 @@
+<%- include('header') %> 
+
+<form action="/register_save" id="login_form" method="post">
+    <h1>Registration page</h1>
+    <% if(typeof message !== 'undefined') { %>
+        <span class="text-danger " ><%= message  %></span>
+    <% } %>  
+    <input type="text" name="username" placeholder="username" class="inp" autocomplete="off"><br>
+    <input type="email" name="email" placeholder="email" class="inp" autocomplete="off"><br>
+    <input type="password" name="password"  class="inp" placeholder="password"><br>
+    <input type="submit" value="Sign Up" class="inp_sub"><br>
+</form>
