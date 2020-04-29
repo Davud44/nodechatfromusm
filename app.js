@@ -173,7 +173,7 @@ io.on('connection', (socket) => {
 });
 
 
-http.listen(8000, '192.168.1.8');
+http.listen(8000);
 // const hostname = '192.168.1.8';
 // port = 8000;
 // app.listen(port, hostname);
